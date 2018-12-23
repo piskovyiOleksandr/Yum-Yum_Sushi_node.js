@@ -1,0 +1,52 @@
+.order {
+    width: 50%;
+    margin: 0 auto;
+    position: relative;
+    .success {
+        display: none;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        padding: 20px;
+        border: 1px solid silver;
+    }
+    .title {
+        display: block;
+        margin-bottom: 20px;
+        font-size: 12px;
+        text-transform: uppercase;
+    }
+    .top .link-menu {
+        padding-left: 0 !important;
+    }
+    form {
+        width: 70%;
+        margin: 30px auto;
+        text-align: center;
+        
+        .form-group, .house {
+            width: 100%;
+            margin-top: 10px;
+            text-align: center;
+            p {
+                font-size: 10px;
+                input {
+                    width: 100%;
+                    padding: 5px;
+                    text-align: center;
+                    border-collapse: separate;
+                    border: none;
+                    border-bottom: 1px solid silver;
+                }
+            }
+        }
+        .house {
+            display: flex;
+            justify-content: space-between;
+            width: 100%;
+        }
+        .body-order {
+            margin-top: 40px;
+        }
+    }
+}

@@ -1,0 +1,29 @@
+@import 'reset';
+
+html {
+  min-height: 100%;
+}
+
+body {
+  font-family: 'Stalinist One', cursive;
+  max-width: 100%;
+  margin: 0 auto;
+}
+main {
+  display: flex;
+  justify-content: space-between;
+}
+.title {
+  text-align: center;
+}
+.menu .list .box .name a {
+  font-family: 'Stalinist One', cursive;
+  color: yellowgreen !important;
+}
+
+@import 'header';
+@import 'goods';
+@import 'cart';
+@import 'order';
+@import 'media';
+

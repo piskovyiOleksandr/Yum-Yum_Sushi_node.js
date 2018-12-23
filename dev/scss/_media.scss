@@ -1,0 +1,24 @@
+@media screen and (min-width:200px) and (max-width:767px) {
+    header {
+        .logo, .info {
+            width: 100%;
+            font-size: 12px;
+        }
+        .logo a {
+            font-size: 25px;
+        }
+    }
+    main {
+        display: flex;
+        flex-direction: column;
+        .menu, .cart {
+            width: 100%;
+        }
+        .menu .list .box {
+            width: 80%;
+        }
+    }
+    .order {
+        width: 100%;
+    }
+}

@@ -1,0 +1,57 @@
+header {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    padding: 10px 0;
+    border-bottom: 1px solid silver;
+    .logo {
+        width: 50%;
+        padding-left: 60px;
+        a {
+            font-family: 'Stalinist One', cursive;
+            font-size: 2rem;
+            font-weight: bold;
+            text-decoration: none;
+            color: rgb(173, 187, 144);
+        }
+    }
+    .info {
+        width: 50%;
+        padding-right: 40px;
+        font-size: 1rem;
+        text-align: right;
+        color: silver;
+    }
+}
+.menu {
+    width: 80%;
+    border-right: 1px solid silver;
+    .list {
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap !important;
+        font-family: 'Open Sans', sans-serif !important;
+        .box {
+            margin: 40px 20px;
+            width: 24%;
+            transition: all .7s ease;
+            &:hover {
+                transform: scale(1.1);
+                box-shadow: 0 0 10px 10px #D4D4D4; 
+            }
+            img {
+                width: 100%;
+                max-height: 300px;
+            }
+            .name {
+                margin-bottom: 20px;
+                text-align: center;
+                a {
+                    font-size: 1rem;
+                    text-decoration: none;
+                    color: blue;
+                }
+            }
+        }
+    }
+}

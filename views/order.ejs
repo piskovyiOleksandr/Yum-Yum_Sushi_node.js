@@ -1,0 +1,74 @@
+<% include layout/header.ejs %>
+
+<main>
+    <div class="order">
+
+        <div class="success">
+            Ваше замовлення прийнято!
+            <a href="/">Ok</a>
+        </div>
+
+        <div class="top">
+            <div class="link-menu">
+                <a href="/">Меню</a>
+            </div>
+        </div>
+        <form method="post">
+            <span class="title">Оформлення замовлення</span> 
+            <div class="form-group">
+                <p><label for="surname">Фамилия</label></p> 
+                <p><input type="text" id="surname" name="surname" /></p> 
+            </div>
+            <div class="form-group">
+                <p><label for="name">Ім'я</label></p>  
+                <p><input type="text" id="name" name="name" /></p>  
+            </div>
+            <div class="form-group">
+                <p><label for="phone">Телефон</label></p> 
+                <p><input type="text" id="phone" name="phone" /></p> 
+            </div>
+            <div class="house">
+                <div class="street">
+                    <p><label for="street">Вулиця</label></p> 
+                    <p><input type="text" id="street" name="street" /></p>
+                </div>
+                <div class="numb">
+                    <p><label for="numb">Номер буд.</label></p> 
+                    <p><input type="text" id="numb" name="numb" /></p>
+                </div>
+                <div class="apartment">
+                    <p><label for="apartment">Номер кв.</label></p> 
+                    <p><input type="text" id="apartment" name="apartment" /></p>
+                </div>
+            </div>
+            <div class="body-order">
+                <span class="title">Ваше замовлення:</span>
+                <table class="summary">
+                    <tbody>
+                        <!--<tr>
+                            <td class="name">
+                                філадедія з лососем
+                            </td>
+                            <td class="price">
+                                65
+                            </td>
+                            <td class="del">
+                                <button type="button">X</button>
+                            </td>
+                        </tr> -->
+                    </tbody>
+                    <tfoot>
+                        <tr>
+                            <th>Всього</th>
+                            <th class="sum"></th>
+                            <th>грн</th>
+                        </tr>
+                    </tfoot>
+                </table>
+                <a class="order" href="/cart/order">Замовити</a>
+            </div>
+        </form>
+    </div>   
+</main>
+
+<% include layout/footer.ejs %>

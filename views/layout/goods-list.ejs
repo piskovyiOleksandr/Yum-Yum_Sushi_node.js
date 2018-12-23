@@ -1,0 +1,30 @@
+<div class="goods">
+    <div class="top">
+        <div class="link-menu">
+            <a href="/">Меню</a>
+        </div>
+        <div class="title">
+            <%= goods[0].ukC %>
+        </div>
+    </div>
+    <div class="list">
+        <% for (var i = 0; i < goods.length; i++) { %>     
+        <div class="box">
+            <img src="../images/<%= goods[i].category %>/<%= goods[i].img %>.jpeg" alt="erorr">
+            <div class="name"> <%= goods[i].name %> </div>
+            <div class="description">
+                <%= goods[i].description %>
+            </div>
+            <div class="price">
+                <span class="price-value"> <%= goods[i].price %></span>
+                <span>грн</span>
+                <span class="weight"> <%= goods[i].weight %> гр</span>
+            </div>
+            <div class="buy">
+                +
+            </div>
+        </div>
+        <% } %>
+    </div>
+</div>
+    
