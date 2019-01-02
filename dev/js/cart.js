@@ -1,6 +1,10 @@
 /* eslint-disable no-undef */
 $(function() {
-    
+ 
+    if(localStorage.cartItems === []) {
+        $('.cart .hidden').css("display", "none");
+    }
+
   var cartItemsString = localStorage.getItem("cartItems");
   var savedItems = JSON.parse(cartItemsString) || [];
 
@@ -34,7 +38,6 @@ $(function() {
         
         if ($(".summary > tbody > tr").length ===0) {
             $(".cart").addClass("empty");
-            $('.cart a').css("display", "none");
         }
   } 
 
@@ -49,7 +52,7 @@ $(function() {
             "<td class='del'><button type='button'>X</button></td" +
         "</tr>"
     );
-    $('.cart a').css("display", "block");
+    $('.hidden').css("display", "block");
     updateTotal();
     updateStorage();
 };
@@ -81,6 +84,8 @@ function updateTotal(){
         removeFromCart($tr);
     }
 });
+
+
 
 
 //---------------ORDER START---------------//
@@ -127,7 +132,6 @@ function removeErrors() {
             } else {
                 $('.top').after('<p class="success">Ваше замовлення прийнято!</p>');
                 localStorage.clear();
-                $('.cart a').css("display", "none");
                 setTimeout( function() {
                     $(location).attr('href', '/');
                 }, 4000);
