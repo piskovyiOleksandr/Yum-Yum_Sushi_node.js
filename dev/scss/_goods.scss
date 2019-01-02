@@ -19,6 +19,7 @@
 
 .goods {
     border-right: 1px solid silver;
+    box-shadow: 0 0 10px 10px #D4D4D4;
     .title {
         padding-right: 60px;
         font-size: 50px;
@@ -38,7 +39,7 @@
             justify-content: space-between;
             margin: 40px 20px;
             padding: 10px;
-            max-width: 25%;
+            width: 25%;
             transition: all .7s ease;
             &:hover {
                 transform: scale(1.1);

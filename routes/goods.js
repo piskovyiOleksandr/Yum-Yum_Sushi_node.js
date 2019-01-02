@@ -25,6 +25,8 @@ function goods(req, res, category) {
   router.get('/sushi', (req, res) => goods(req, res, 'sushi'));
   router.get('/seasonal-menu', (req, res) => goods(req, res, 'seasonal-menu'));
   router.get('/sushi-sets', (req, res) => goods(req, res, 'sushi-sets'));
+  router.get('/sashimi', (req, res) => goods(req, res, 'sashimi'));
+  router.get('/hot-meals', (req, res) => goods(req, res, 'hot-meals'));
   router.get('/drinks', (req, res) => goods(req, res, 'drinks'));
   router.get('/desserts', (req, res) => goods(req, res, 'desserts'));
 

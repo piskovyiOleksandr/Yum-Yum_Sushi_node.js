@@ -26,7 +26,6 @@ gulp.task('scripts', () =>
   gulp
     .src([
       'dev/js/cart.js',
-      'dev/js/order.js'
     ])
     .pipe(concat('scripts.js'))
     .pipe(uglify())

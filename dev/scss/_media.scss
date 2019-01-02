@@ -18,7 +18,17 @@
             width: 80%;
         }
     }
+    .goods .top .link-menu a, .goods .title {
+        font-size: 16px;
+    }
+    .goods .list .box {
+        width: 100%;
+    }
     .order {
+        width: 100%;
+    }
+    .footer .delivery, .footer .contacts {
+        padding: 10px;
         width: 100%;
     }
 }

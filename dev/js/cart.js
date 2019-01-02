@@ -83,31 +83,59 @@ function updateTotal(){
 });
 
 
-$('.btn-order').on('click', function(e) {
-    e.preventDefault();
+//---------------ORDER START---------------//
+
+// REMOVE ERRORS
+function removeErrors() {
+    $(' .order p.error').remove();
+    $('.form-order p input').removeClass('error');
+  }
+
+   // CLEAR
+   $('.form-order p input').on('focus', function() {
+    removeErrors();
+  });
+
+    $('.btn-order').on('click', function(e) {
+        e.preventDefault();
+        removeErrors();
+
+        var data = {
+            surname: $('#surname').val(),
+            name: $('#name').val(),
+            phone: $('#phone').val(),
+            street: $('#street').val(),
+            numb: $('#numb').val(),
+            apartment: $('#apartment').val(),
+            nameOrder: $('.summary .name').text(),
+            sumOder: $('.summary .sum').text()
+        };
     
-    var data = {
-        surname: $("#surname").val(),
-        name: $("#name").val(),
-        street: $("#street").val(),
-        body: $('.summary > tbody > tr > td.name').text()
-    };
-    
-    console.log(data);
-    $.ajax({
-        type: 'POST',
-        data: JSON.stringify(data),
-        contentType: 'application/json',
-        url: '/cart/order'
-      }).done(function(data) {
-        if (!data.ok) {
-          alert("Error")
-        } else {
-            alert("good")
-            $(location).attr('href', '/');
-        }
-      });
+        $.ajax({
+          type: 'POST',
+          data: JSON.stringify(data),
+          contentType: 'application/json',
+          url: '/cart/order'
+        }).done(function (data) {
+            if (!data.ok) {
+              $('.top').after('<p class="error">' + data.error + '</p>');
+              if (data.fields) {
+                data.fields.forEach(function(item) {
+                  $('#' + item).addClass('error');
+                });
+              }
+            } else {
+                $('.top').after('<p class="success">Ваше замовлення прийнято!</p>');
+                localStorage.clear();
+                $('.cart a').css("display", "none");
+                setTimeout( function() {
+                    $(location).attr('href', '/');
+                }, 4000);
+                
+            }
+          });
     });
+
 });
   
 /* eslint-enable no-undef */

@@ -1,0 +1,21 @@
+.footer {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    margin-top: 20px;
+    padding-top: 10px;
+    font-size: 8px;
+    border-top: 1px solid silver;
+    box-shadow: 0 0 10px 10px #D4D4D4;
+    .delivery, .contacts p {
+            line-height: 2;
+    }
+    .delivery {
+        width: 60%;
+        padding-left: 60px;
+    }
+    .contacts {
+        width: 30%;
+        padding-right: 40px;
+    }
+}
