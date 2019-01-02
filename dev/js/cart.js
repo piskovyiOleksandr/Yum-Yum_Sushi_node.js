@@ -1,9 +1,5 @@
 /* eslint-disable no-undef */
 $(function() {
- 
-    if(localStorage.cartItems === []) {
-        $('.cart .hidden').css("display", "none");
-    }
 
   var cartItemsString = localStorage.getItem("cartItems");
   var savedItems = JSON.parse(cartItemsString) || [];
