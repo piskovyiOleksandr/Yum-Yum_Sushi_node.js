@@ -34,12 +34,15 @@ $(function() {
         
         if ($(".summary > tbody > tr").length ===0) {
             $(".cart").addClass("empty");
+            $(".empty-cart").show();
         }
   } 
 
   function addToCart(item){
 
     $(".cart").removeClass("empty");
+    $(".empty-cart").hide();
+
 
     $(".summary > tbody").append(
         "<tr>" + 

@@ -7,6 +7,8 @@
     font-size: 8px;
     border-top: 1px solid silver;
     box-shadow: 0 0 10px 10px #D4D4D4;
+    background: rgb(220,223,223);
+    background: radial-gradient(circle, rgba(220,223,223,1) 0%, rgba(237,237,237,1) 100%);
     .delivery, .contacts p {
             line-height: 2;
     }

@@ -3,23 +3,8 @@ const bodyParser = require('body-parser');
 const path = require('path');
 const staticAsset = require('static-asset');
 const mongoose = require('mongoose');
-
-const config = require('./config');
 const routes = require('./routes');
 
-// database
-mongoose.Promise = global.Promise;
-mongoose.set('debug', config.IS_PRODUCTION);
-mongoose.connection
-  .on('error', error => console.log(error))
-  .on('close', () => console.log('Database connection closed.'))
-  .once('open', () => {
-    const info = mongoose.connections[0];
-    console.log(`Connected to ${info.host}:${info.port}/${info.name}`);
-  });
-mongoose.connect(config.MONGO_URL, { useMongoClient: true });
-
-// express
 const app = express();
 
 // sets and uses
@@ -37,7 +22,6 @@ app.use(
 app.get('/', (req, res) => {
   res.render('index');
 });
-
 app.use('/goods', routes.goods);
 app.use('/cart', routes.cart);
 
@@ -55,12 +39,23 @@ app.use((req, res, next) => {
 app.use((error, req, res, next) => {
   res.status(error.status || 500);
   res.render('error', {
-    message: error.message,
-    error: !config.IS_PRODUCTION ? error : {}
+    message: error.message
   });
 });
 
-app.listen(config.PORT, () =>
-  console.log(`Example app listening on port ${config.PORT}!`)
-);
 
+
+async function start() {
+  try {
+    await mongoose.connect('mongodb+srv://oleksandr:oleksandr@cluster0.q6pf0.mongodb.net/yum-yum?retryWrites=true&w=majority', {
+      useNewUrlParser: true,
+      useUnifiedTopology: true,
+      useCreateIndex: true
+    })
+    app.listen(4000, () => console.log('Server work!'))
+  } catch (e) {
+    console.log('Server Error', e.message)
+  }
+}
+
+start()

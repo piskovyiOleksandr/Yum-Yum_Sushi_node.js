@@ -21,7 +21,7 @@
     "gulp-concat": "^2.6.1",
     "gulp-uglifyjs": "^0.6.2",
     "jquery": "^3.3.1",
-    "mongoose": "^4.13.7",
+    "mongoose": "^5.11.11",
     "mongoose-autopopulate": "^0.7.0",
     "mongoose-url-slugs": "^1.0.2",
     "node": "^8.4.0",

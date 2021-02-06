@@ -4,6 +4,8 @@ header {
     flex-wrap: wrap;
     padding: 10px 0;
     border-bottom: 1px solid silver;
+    background: rgb(220,223,223);
+    background: radial-gradient(circle, rgba(220,223,223,1) 0%, rgba(237,237,237,1) 100%);
     box-shadow: 0 0 10px 10px #D4D4D4;
     .logo {
         width: 50%;
@@ -35,7 +37,7 @@ header {
         font-family: 'Open Sans', sans-serif !important;
         .box {
             margin: 40px 20px;
-            width: 24%;
+            width: 40%;
             transition: all .7s ease;
             &:hover {
                 transform: scale(1.1);

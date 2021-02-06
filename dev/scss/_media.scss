@@ -11,15 +11,24 @@
     main {
         display: flex;
         flex-direction: column;
+        justify-content: space-between;
+        align-items: center;
         .menu, .cart {
             width: 100%;
         }
+        .menu .list {
+            width: 100%;
+        }
         .menu .list .box {
-            width: 80%;
+            width: 100%;
         }
     }
     .goods .top .link-menu a, .goods .title {
-        font-size: 16px;
+        font-size: 10px;
+    }
+    .goods .list {
+       display: flex;
+       justify-self: center;
     }
     .goods .list .box {
         width: 100%;
